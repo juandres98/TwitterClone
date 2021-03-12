@@ -7,7 +7,7 @@
              x:Class="TwitterClone.Views.Login">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Twitter!"
+            <Label Text="Welcome to Twitter! :)"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
