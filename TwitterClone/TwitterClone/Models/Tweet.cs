@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLiteNetExtensions.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,5 +10,7 @@ namespace TwitterClone.Models
         public int Id { get; set; }
         public int IdUser { get; set; }
         public string Text { get; set; }
+        [OneToMany]
+        public List<Tweet> Tweets { get; set; }
     }
 }

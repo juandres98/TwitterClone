@@ -6,10 +6,25 @@
              mc:Ignorable="d"
              x:Class="TwitterClone.Views.Login">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Twitter! :)"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Padding="20">
+                <Label Margin="0,10" Text="Twitter" FontSize="Small"  HorizontalOptions="Center" FontAttributes="Bold"/>
+                <Image Source="TwitterLogo.png" WidthRequest="130"/>
+                <Grid Margin="0,20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label  Grid.Row="0" Grid.Column="0" Text="Usuario" VerticalOptions="Center"></Label>
+                    <Entry Text="{Binding Name}" x:Name="usuarioEntry" Grid.Row="0" Grid.Column="1" Keyboard="Text" Placeholder="Usuario"></Entry>
+                    <Label  Grid.Row="1" Grid.Column="0" Text="Contraseña" VerticalOptions="Center"></Label>
+                    <Entry  Text="{Binding Password}" x:Name="contrasenaEntry" Grid.Row="1" Grid.Column="1" IsPassword="True" Placeholder="Contraseña"></Entry>
+                </Grid>
+                <StackLayout Margin="30,0">
+                    <Button BackgroundColor="#04aceb" BorderRadius="23" Text="Ingresar" TextColor="White" Command="{Binding LoginCommand}"></Button>
+                    <ActivityIndicator IsVisible="False" IsRunning="True" x:Name="activityIndicator"></ActivityIndicator>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLiteNetExtensions.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,7 +9,8 @@ namespace TwitterClone.Models
     {
         public int Id { get; set; }
         public int IdUser { get; set; }
-        public int IdUser2 { get; set; }
+        [ForeignKey(typeof(Tweet))]
+        public int IdTweet { get; set; }
 
     }
 }
